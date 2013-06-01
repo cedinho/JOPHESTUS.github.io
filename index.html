@@ -12,7 +12,14 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+<!-- DC Spoiler Codes CSS -->
+<link type="text/css" rel="stylesheet" href="dreamcodes/spoiler_codes/css/tsc_spoiler_code.css" />
+ 
+<!-- jQuery Library (skip this step if already called on page ) -->
+<script type="text/javascript" src="dreamcodes/jquery.min.js"></script> <!-- (do not call twice) -->
+ 
+<!-- DC Spoiler Codes JS -->
+<script type="text/javascript" src="dreamcodes/spoiler_codes/js/tsc_spoiler_code.js"></script>
   </head>
   <body>
 
@@ -42,7 +49,186 @@
 
 <h3>
 <a name="jophwarn" class="anchor" href="#jophwarn"><span class="octicon octicon-link"></span></a>JOPHWarn</h3>
+<p>J<span class="tsc_spoiler"><p><img src="http://img13.imagefra.me/i56i/jophestus/jvtc_32d_uctcu.png" alt="Logo" title="Logo">  <a href="https://www.paypal.com/au/cgi-bin/webscr?cmd=_flow&amp;SESSION=fQ4MrSZu9dD3UgvQWTh3NL8KVcI5yPit6Zh8pJAqcEBlLCoul0l9B39sDuu&amp;dispatch=5885d80a13c0db1f8e263663d3faee8d8494db9703d295b4a2116480ee01a05c"><img src="http://cdn.craftfire.com/img/button/donate_paypal_96x96.png" alt="Donate" title="Donate"></a></p>
+<h2 id="w-jophwarn-the-awesome-way-to-warn-users">JOPHWarn - The awesome way to warn users!</h2>
+<p><strong>Note: For support please go to my <a href="http://jophest.us/?q=forum">site</a></strong></p>
+<h4 id="w-what-it-does"><strong>What it does?</strong></h4>
+<p>JOPHWarn is a simple plugin that is used to warn players about griefing, stealing, swearing or anything really.</p>
+<h4 id="w-is-it-heavy-on-resources"><strong> Is it heavy on resources?</strong></h4>
+<p>No. JOPHWarn is designed to be lightweight and it runs smoothly</p>
+<h4 id="w-what-features-does-it-have"><strong>What features does it have?</strong></h4>
+<ul><li>Warn players with /warn &lt;playername&gt; warning 
+</li><li>You can view the warnings of any player, <strong>they don't have to be online :D </strong>
+<img src="http://i.imgur.com/NeZPQ.png" alt="" title="">
+(Yes, I know I spelt member wrong :P I was typing fast)
+</li><li>You can define how many warnings before a user is kicked 
+</li><li>You can define how many warnings before a user is banned
+</li><li>You can clear all of a user's warnings using a command (see below)
+</li><li>6 custom command features
+</li><li>All warnings show in the console and go in your server.log file
+</li><li>Players with a perm node can be notified on warnings
+</li><li>Adds timestamps to warnings
+</li></ul>
+<h4 id="w-commands"><strong>Commands</strong></h4>
+<ul><li>/warn PLAYERNAME WARNING-TEXT-HERE -<em>warns a user</em>
+</li><li>/warnings view PLAYERNAME - <em>shows the users warnings and who warned them</em>
+</li><li>/warnings clear PLAYERNAME - <em>clears all of the player's warnings</em>
+</li><li>/infract PLAYERNAME WARNING-TEXT-HERE -<em>infracts a user</em>
+</li><li>/infractions view PLAYERNAME - <em>shows the users infractions and who infracted them</em>
+</li><li>/infractions clear PLAYERNAME - <em>clears all of the player's infractions</em>
+</li></ul>
+<h4 id="w-permissions"><strong>Permissions</strong></h4>
+<ul><li>JOPHWarn.warn -<em> Allows players to warn other users</em>
+</li><li>JOPHWarn.view - <em>Allows players to view other users warnings</em>
+</li><li>JOPHWarn.warnings.clearall - <em>Allows a player to clear all of a players warnings</em>
+</li><li>JOPHWarn.notify - <em>Anyone with this permission will get notified when a player is warned</em>
+</li><li>JOPHWarn.infract -<em> Allows players to give infractions to other users</em>
+</li><li>JOPHWarn.infractions.view - <em>Allows players to view other users infractions</em>
+</li><li>JOPHWarn.infractions.clearall - <em>Allows a player to clear all of a players infractions</em>
+</li></ul>
+<h3 id="w-config">Config</h3>
+<div class="code-wrapper" data-lexer="yaml"><div class="markup-code"><pre><span class="c1">################################################</span>
+<span class="c1">#             JOPHWarn Config                  #</span>
+<span class="c1">################################################</span>
 
+<span class="c1">#Notify all people with JOPHWarn.notify when a player is warned</span>
+<span class="l-Scalar-Plain">notifyadmins</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+
+<span class="c1">#Enable kick feature?</span>
+<span class="l-Scalar-Plain">enablekick</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="c1">#The maximum amount of warnings a players gets before they are kicked</span>
+<span class="l-Scalar-Plain">kickafter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+<span class="c1">#kick message</span>
+<span class="l-Scalar-Plain">kickmessage</span><span class="p-Indicator">:</span> <span class="s">'Slow</span><span class="nv"> </span><span class="s">down,</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">gonna</span><span class="nv"> </span><span class="s">get</span><span class="nv"> </span><span class="s">banz0rd'</span>
+
+<span class="c1">#enable ban feature?</span>
+<span class="l-Scalar-Plain">enableban</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="c1">#ban after how many warnings?</span>
+<span class="l-Scalar-Plain">banafter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">10</span>
+<span class="c1">#Ban message</span>
+<span class="l-Scalar-Plain">banmessage</span><span class="p-Indicator">:</span> <span class="s">'You</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">reached</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">maximum</span><span class="nv"> </span><span class="s">allowed</span><span class="nv"> </span><span class="s">warnings'</span>
+
+<span class="c1">#Enable infraction kick feature?</span>
+<span class="l-Scalar-Plain">enableinfractkick</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="c1">#The maximum amount of warnings a players gets before they are kicked</span>
+<span class="l-Scalar-Plain">infractionkickafter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">3</span>
+<span class="c1">#kick message</span>
+<span class="l-Scalar-Plain">infractionkickmessage</span><span class="p-Indicator">:</span> <span class="s">'Slow</span><span class="nv"> </span><span class="s">down,</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">gonna</span><span class="nv"> </span><span class="s">get</span><span class="nv"> </span><span class="s">banz0rd'</span>
+
+<span class="c1">#enable infraction ban feature?</span>
+<span class="l-Scalar-Plain">enableinfractban</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="c1">#ban after how many warnings?</span>
+<span class="l-Scalar-Plain">infractionbanafter</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">10</span>
+<span class="c1">#Ban message</span>
+<span class="l-Scalar-Plain">infractionbanmessage</span><span class="p-Indicator">:</span> <span class="s">'You</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">reached</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">maximum</span><span class="nv"> </span><span class="s">allowed</span><span class="nv"> </span><span class="s">warnings'</span>
+
+<span class="c1">################################################</span>
+<span class="c1">#        JOPHWarn Custom Warn Commands         #</span>
+<span class="c1">################################################</span>
+
+<span class="c1">#!!!!! %p will be replaced with the players name !!!!!#</span>
+<span class="c1">#!!!!! %w will be replaced with the warn reason  !!!!!#</span>
+
+<span class="c1">#enable customcommand1?</span>
+<span class="l-Scalar-Plain">enablecustom1</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom command after:</span>
+<span class="l-Scalar-Plain">custom1warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>
+<span class="c1">#custom command1 (use %p for player)</span>
+<span class="l-Scalar-Plain">custom1command</span><span class="p-Indicator">:</span> <span class="s">'tempban</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">1d'</span>
+
+<span class="c1">#enable custom command2?</span>
+<span class="l-Scalar-Plain">enablecustom2</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 2 after</span>
+<span class="l-Scalar-Plain">custom2warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2</span>
+<span class="c1">#custom2 command (use %p for player)</span>
+<span class="l-Scalar-Plain">custom2command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname'</span>
+
+<span class="c1">#enable custom command3?</span>
+<span class="l-Scalar-Plain">enablecustom3</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom custom 3 after?</span>
+<span class="l-Scalar-Plain">custom3warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom3 command (use %p for player)</span>
+<span class="l-Scalar-Plain">custom3command</span><span class="p-Indicator">:</span> <span class="s">'deop</span><span class="nv"> </span><span class="s">%p'</span>
+
+<span class="c1">#enable custom command4?</span>
+<span class="l-Scalar-Plain">enablecustom4</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 4 after</span>
+<span class="l-Scalar-Plain">custom4warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom4 command (use %p for player)</span>
+<span class="l-Scalar-Plain">custom4command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname2'</span>
+
+<span class="c1">#enable custom command5?</span>
+<span class="l-Scalar-Plain">enablecustom5</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 5 after</span>
+<span class="l-Scalar-Plain">custom5warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom5 command (use %p for player)</span>
+<span class="l-Scalar-Plain">custom5command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname3'</span>
+
+<span class="c1">#enable custom command6?</span>
+<span class="l-Scalar-Plain">enablecustom6</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 6 after</span>
+<span class="l-Scalar-Plain">custom6warns</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom6 command (use %p for player)</span>
+<span class="l-Scalar-Plain">custom6command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname4'</span>
+
+<span class="c1">################################################</span>
+<span class="c1">#        JOPHWarn Custom Infract Commands      #</span>
+<span class="c1">################################################</span>
+
+<span class="c1">#!!!!! %p will be replaced with the players name !!!!!#</span>
+<span class="c1">#!!!!! %infract will be replaced with the infract reason  !!!!!#</span>
+
+<span class="c1">#enable infract custom command1?</span>
+<span class="l-Scalar-Plain">infractenablecustom1</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 1 command after:</span>
+<span class="l-Scalar-Plain">custom1infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">5</span>
+<span class="c1">#custom command1 (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom1command</span><span class="p-Indicator">:</span> <span class="s">'tempban</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">1d'</span>
+
+<span class="c1">#enable infract custom command2?</span>
+<span class="l-Scalar-Plain">infractenablecustom2</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 2 after</span>
+<span class="l-Scalar-Plain">custom2infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2</span>
+<span class="c1">#custom2 command (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom2command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname'</span>
+
+<span class="c1">#enable infract custom command3?</span>
+<span class="l-Scalar-Plain">infractenablecustom3</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom custom 3 after?</span>
+<span class="l-Scalar-Plain">custom3infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom3 command (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom3command</span><span class="p-Indicator">:</span> <span class="s">'deop</span><span class="nv"> </span><span class="s">%p'</span>
+
+<span class="c1">#enable infract custom command4?</span>
+<span class="l-Scalar-Plain">infractenablecustom4</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 4 after</span>
+<span class="l-Scalar-Plain">custom4infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom4 command (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom4command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname2'</span>
+
+<span class="c1">#enable infract custom command5?</span>
+<span class="l-Scalar-Plain">infractenablecustom5</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 5 after</span>
+<span class="l-Scalar-Plain">custom5infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom5 command (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom5command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname3'</span>
+
+<span class="c1">#enable infract custom command6?</span>
+<span class="l-Scalar-Plain">infractenablecustom6</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="c1">#execute custom 6 after</span>
+<span class="l-Scalar-Plain">custom6infracts</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1337</span>
+<span class="c1">#custom6 command (use %p for player)</span>
+<span class="l-Scalar-Plain">infractcustom6command</span><span class="p-Indicator">:</span> <span class="s">'jail</span><span class="nv"> </span><span class="s">%p</span><span class="nv"> </span><span class="s">jailname4'</span>
+</pre></div>
+</div><h3 id="w-upcoming-features">Upcoming Features</h3>
+<ul><li>Customisable messages
+</li><li>Suggestions??
+</li></ul>
+<h4 id="w-you-should-liek-totally-check-out-my-site-it-has-all">You should liek, totally check out my site! It has all my plugin documentation and it's just really awesome <span class="emote emote-grin" title="Grin">:D</span> <a href="http://jophest.us">HERE</a></h4>
+<h3 id="w-do-not-post-support-questions-here-post-them-on-my">Do NOT post support questions here, post them on my support forum on my site (You don't need to sign up)</h3>
+<h6 id="w-find-my-source-code-https-github-com-jophestus-here">Find my source code <a href="https://github.com/JOPHESTUS">here</a></h6>
+
+        </span></p>
 <h3>
 <a name="jophcraft" class="anchor" href="#jophcraft"><span class="octicon octicon-link"></span></a>JOPHCraft</h3>
 
@@ -63,56 +249,7 @@
 
 <h3>
 <a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3><h3>
-<a name="allspawn" class="anchor" href="#allspawn"><span class="octicon octicon-link"></span></a>AllSpawn</h3>
+
 
 <h3>
 <a name="jophspawner" class="anchor" href="#jophspawner"><span class="octicon octicon-link"></span></a>JOPHSpawner</h3>
