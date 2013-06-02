@@ -9,6 +9,9 @@ by Matt Graham
   font-weight: bold;
   font-style: normal;
 }
+::selection {
+  background: #ffcc00; /* Safari */
+	}
 
 @font-face {
   font-family: 'Quattrocento Sans';
