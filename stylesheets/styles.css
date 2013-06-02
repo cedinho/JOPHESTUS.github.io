@@ -9,6 +9,9 @@ by Matt Graham
   font-weight: bold;
   font-style: normal;
 }
+::selection {
+	background: ##ffcc00; 
+	}
 
 @font-face {
   font-family: 'Quattrocento Sans';
@@ -752,7 +755,7 @@ header p {
   position:fixed;
   width:630px;
   left:50%;
-  margin-left:-315px;
+  margin-left:-330px;
 }
 
 #banner ul {
