@@ -748,6 +748,13 @@ header p {
   background-color: #ffeca0;
 }
 
+#banner .navholder {
+  position:fixed;
+  width:630px;
+  left:50%;
+  margin-left:-315px;
+}
+
 #banner ul {
   list-style: none;
   height: 40px;
