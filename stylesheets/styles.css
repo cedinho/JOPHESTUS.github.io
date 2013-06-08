@@ -12,7 +12,9 @@ by Matt Graham
 ::selection {
 	background: #ffcc00; 
 	}
-
+::-moz-selection {
+	background: #ffcc00; 
+}
 @font-face {
   font-family: 'Quattrocento Sans';
   src: url("../fonts/quattrocentosans-bolditalic-webfont.eot");
